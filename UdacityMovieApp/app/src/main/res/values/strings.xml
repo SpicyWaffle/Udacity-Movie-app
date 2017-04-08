@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UdacityMovieApp</string>
+
+    <string name="plot_synopsis">Plot Synopsis</string>
+    <string name="loading_movies">Loading Movies</string>
+    <string name="error_message">There was an error while loading movies</string>
+
+
+    <string name="popular_menu_string">Sort by Popularity</string>
+    <string name="rating_menu_string">Sort by Rating</string>
+</resources>
