@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,7 +13,8 @@
         <ImageView
             android:id="@+id/movie_details_page_trailers_layout"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="200dp"
+            android:scaleType="centerCrop">
         </ImageView>
 
 
@@ -24,6 +26,17 @@
             android:layout_marginTop="-40dp"
             android:layout_marginLeft="15dp"
             />
+
+        <com.like.LikeButton
+            app:icon_type="heart"
+            app:icon_size="30dp"
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/movie_details_page_trailers_layout"
+            app:anim_scale_factor="1.5"
+            android:layout_alignBottom="@+id/movie_details_page_trailers_layout"/>
+
         <TextView
             android:id="@+id/movie_details_page_tv_movie_title"
             android:layout_width="wrap_content"
@@ -87,7 +100,39 @@
             android:layout_marginTop="10dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            tools:text="Plot Synopsis gsedg sdg gsergrxg xre gxrg xgxg xerg rg xr gxg xg xrg xxrgr "
             />
+
+        <TextView
+            android:id="@+id/trailers_heading"
+            android:layout_below="@id/movie_details_page_plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_trailers"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_marginLeft="16dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/trailers_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trailers_heading"/>
+
+        <TextView
+            android:id="@+id/reviews_heading"
+            android:layout_below="@id/trailers_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_reviews"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_marginLeft="16dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reviews_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reviews_heading"/>
 
 
     </RelativeLayout>

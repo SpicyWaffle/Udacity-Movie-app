@@ -1,4 +1,4 @@
-package com.example.android.udacitymovieapp;
+package com.example.android.udacitymovieapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import com.example.android.udacitymovieapp.DetailsActivity;
+import com.example.android.udacitymovieapp.R;
+import com.example.android.udacitymovieapp.ViewModels.MovieItemListModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by rafa2093 on 4/2/2017.
@@ -28,7 +32,7 @@ public class MovieListRVAdapter extends RecyclerView.Adapter<MovieListRVAdapter.
 
     public static final String PARCELABLE_EXTRA_STRING = "movie_data";
 
-    MovieListRVAdapter()
+    public MovieListRVAdapter()
     {
         mMovieData = new ArrayList<>();
     }
@@ -89,20 +93,16 @@ public class MovieListRVAdapter extends RecyclerView.Adapter<MovieListRVAdapter.
 
     public class MovieListItemViewHolder extends RecyclerView.ViewHolder
     {
-        public ImageView mIv;
-        public TextView mMovieName;
-        public TextView mReleaseDate;
-        public RatingBar mMovieRating;
+        @BindView(R.id.movie_grid_item_poster) ImageView mIv;
+        @BindView(R.id.movie_grid_item_movie_genre_tv) TextView mReleaseDate;
+        @BindView(R.id.movie_grid_item_movie_name_tv) TextView mMovieName;
+        @BindView(R.id.movie_grid_item_rating_bar) RatingBar mMovieRating;
 
 
         MovieListItemViewHolder(View view)
         {
             super(view);
-
-            mIv = (ImageView) view.findViewById(R.id.movie_grid_item_poster);
-            mReleaseDate = (TextView) view.findViewById(R.id.movie_grid_item_movie_genre_tv);
-            mMovieName = (TextView) view.findViewById(R.id.movie_grid_item_movie_name_tv);
-            mMovieRating = (RatingBar) view.findViewById(R.id.movie_grid_item_rating_bar);
+            ButterKnife.bind(this, view);
         }
     }
 

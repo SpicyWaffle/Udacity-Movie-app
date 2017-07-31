@@ -1,4 +1,4 @@
-package com.example.android.udacitymovieapp;
+package com.example.android.udacitymovieapp.ViewModels;
 
 import android.os.Parcel;
 import android.os.Parcelable;

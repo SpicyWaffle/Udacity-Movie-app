@@ -24,6 +24,7 @@ public class MovieNetworkUtils {
     public static final int HIGHEST_RATED = 2;
     public static final int ASCENDING = 3;
     public static final int DESCENDING = 4;
+    public static final int FAVORITES = 5;
 
     public static final String MOST_POPULAR_STRING = "popularity";
     public static final String HIGHEST_RATED_STRING = "vote_average";
@@ -42,6 +43,8 @@ public class MovieNetworkUtils {
     public static final String LANGUAGE = "en-US";
 
     public static final String MOVIE = "movie";
+    public static final String VIDEOS = "videos";
+    public static final String REVIEWS = "reviews";
     public static final String API_KEY_QUERY = "api_key";
 
     public static final String INCLUDE_ADULT_QUERY = "include_adult";
@@ -114,7 +117,45 @@ public class MovieNetworkUtils {
         return url;
     }
 
+    public static URL buildTrailerUrl(int movieId) {
 
+        Uri builtUri = Uri.parse(BASE_URL).buildUpon()
+                .appendPath(MOVIE)
+                .appendPath(movieId + "")
+                .appendPath(VIDEOS)
+                .appendQueryParameter(API_KEY_QUERY, APIKEY)
+                .appendQueryParameter(LANGUAGE_QUERY, LANGUAGE)
+                .build();
+
+        URL url = null;
+        try {
+            url = new URL(builtUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        return url;
+    }
+
+    public static URL buildReviewUrl(int movieId) {
+
+        Uri builtUri = Uri.parse(BASE_URL).buildUpon()
+                .appendPath(MOVIE)
+                .appendPath(movieId + "")
+                .appendPath(REVIEWS)
+                .appendQueryParameter(API_KEY_QUERY, APIKEY)
+                .appendQueryParameter(LANGUAGE_QUERY, LANGUAGE)
+                .build();
+
+        URL url = null;
+        try {
+            url = new URL(builtUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        return url;
+    }
 
 
     public static String getResponseFromHttpUrl(URL url) throws IOException {

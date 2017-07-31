@@ -8,4 +8,9 @@
 
     <string name="popular_menu_string">Sort by Popularity</string>
     <string name="rating_menu_string">Sort by Rating</string>
+    <string name="favorites_menu_item">Sort by Favorites</string>
+    <string name="title_trailers">Trailers</string>
+    <string name="title_reviews">Reviews</string>
+
+    <string name="tools_trailer_name">Trailer Name</string>
 </resources>

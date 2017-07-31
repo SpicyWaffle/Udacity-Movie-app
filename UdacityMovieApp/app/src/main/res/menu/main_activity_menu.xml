@@ -2,8 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_sort"
+        android:id="@+id/action_sort_rating"
         android:title="@string/rating_menu_string"
-        app:showAsAction="ifRoom"/>
+        />
+    <item
+        android:id="@+id/action_sort_popularity"
+        android:title="@string/popular_menu_string"
+        />
+    <item
+        android:id="@+id/action_sort_favorite"
+        android:title="@string/favorites_menu_item"
+        />
 
 </menu>
