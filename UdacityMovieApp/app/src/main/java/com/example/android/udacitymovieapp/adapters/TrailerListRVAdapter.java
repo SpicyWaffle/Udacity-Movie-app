@@ -4,19 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.android.udacitymovieapp.DetailsActivity;
 import com.example.android.udacitymovieapp.R;
-import com.example.android.udacitymovieapp.ViewModels.MovieItemListModel;
 import com.example.android.udacitymovieapp.ViewModels.TrailerItemListModel;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

@@ -43,6 +43,8 @@ public class MovieNetworkUtils {
     public static final String LANGUAGE = "en-US";
 
     public static final String MOVIE = "movie";
+    public static final String POPULAR = "popular";
+    public static final String TOP_RATED = "top_rated";
     public static final String VIDEOS = "videos";
     public static final String REVIEWS = "reviews";
     public static final String API_KEY_QUERY = "api_key";
@@ -96,16 +98,22 @@ public class MovieNetworkUtils {
         }
 
 
+
         Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-        .appendPath(DISCOVER)
-        .appendPath(MOVIE)
-        .appendQueryParameter(API_KEY_QUERY, APIKEY)
-        .appendQueryParameter(LANGUAGE_QUERY, LANGUAGE)
-        .appendQueryParameter(SORT_BY_QUERY, sortParam)
-        .appendQueryParameter(INCLUDE_ADULT_QUERY, "false")
-        .appendQueryParameter(INCLUDE_VIDEO_QUERY, "false")
-        .appendQueryParameter(PAGE_QUERY, Integer.toString(page))
-        .build();
+                .appendPath(MOVIE).build();
+
+        if(type == MOST_POPULAR)
+        {
+            builtUri = builtUri.buildUpon().appendPath(POPULAR).build();
+        }
+        else
+        {
+            builtUri = builtUri.buildUpon().appendPath(TOP_RATED).build();
+        }
+
+        builtUri = builtUri.buildUpon().appendQueryParameter(API_KEY_QUERY, APIKEY)
+                .appendQueryParameter(LANGUAGE_QUERY, LANGUAGE)
+                .build();
 
         URL url = null;
         try {

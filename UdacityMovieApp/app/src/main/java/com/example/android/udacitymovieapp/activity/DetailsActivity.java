@@ -1,4 +1,4 @@
-package com.example.android.udacitymovieapp;
+package com.example.android.udacitymovieapp.activity;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -16,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.android.udacitymovieapp.MovieJSONParser;
+import com.example.android.udacitymovieapp.MovieNetworkUtils;
+import com.example.android.udacitymovieapp.R;
 import com.example.android.udacitymovieapp.ViewModels.MovieItemListModel;
 import com.example.android.udacitymovieapp.ViewModels.ReviewItemListModel;
 import com.example.android.udacitymovieapp.ViewModels.TrailerItemListModel;

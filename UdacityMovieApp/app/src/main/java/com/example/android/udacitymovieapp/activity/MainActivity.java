@@ -1,4 +1,4 @@
-package com.example.android.udacitymovieapp;
+package com.example.android.udacitymovieapp.activity;
 
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -16,6 +16,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.android.udacitymovieapp.MovieJSONParser;
+import com.example.android.udacitymovieapp.MovieNetworkUtils;
+import com.example.android.udacitymovieapp.R;
 import com.example.android.udacitymovieapp.ViewModels.MovieItemListModel;
 import com.example.android.udacitymovieapp.adapters.MovieListRVAdapter;
 import com.example.android.udacitymovieapp.data.FavoritesContract;

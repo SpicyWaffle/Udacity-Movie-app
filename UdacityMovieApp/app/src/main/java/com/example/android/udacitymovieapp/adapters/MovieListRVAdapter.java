@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.android.udacitymovieapp.DetailsActivity;
+import com.example.android.udacitymovieapp.activity.DetailsActivity;
 import com.example.android.udacitymovieapp.R;
 import com.example.android.udacitymovieapp.ViewModels.MovieItemListModel;
 import com.squareup.picasso.Picasso;
